@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title> 
+</head>
+<body>
+
+<script>
+     window.onload = function attempt() {
+         let available = [240, 720];
+         let allowed = [ 360, 720];
+         let preferred = 1080;
+         let val = [];
+         let result;
+         for(let i = 0 ; i < available.length; i++){
+             if(available[i] === preferred){
+                 result = available[i]
+             }
+             else if(result === undefined){
+                 for(let y = 0 ; y < allowed.length; y++){
+                     if(available[i] === allowed[y]){
+                         val.push(available[i])
+                     }          
+                 }
+             }
+         }
+
+         if(result === undefined) {
+             for (let i = 0; i < val.length; i++) {
+                 if (val[i] > preferred) {
+                     result = val[i]
+                 } 
+                 else if (val[i] < preferred){
+                     result= val[i]
+                 }
+             }
+         }
+         
+        if (result == undefined) {
+            result = "error"
+        }
+             console.log(result)   
+    }
+ 
+</script>
+
+</body>
